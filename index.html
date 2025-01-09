@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisketävling 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Fisketävling 2025</h1>
+    </header>
+
+    <div class="main-container" style="display: none;">
+        <div class="form-container">
+            <h2>Registrera fångst</h2>
+            <form id="catchForm">
+                <select id="fisherman" required aria-label="Välj fiskare">
+                    <option value="">Välj fiskare</option>
+                    <option value="Markus">Markus</option>
+                    <option value="Max">Max</option>
+                    <option value="Lasse">Lasse</option>
+                </select>
+                <select id="fish" required aria-label="Välj fisk">
+                    <option value="">Välj fisk</option>
+                    <option value="Abborre">Abborre</option>
+                    <option value="Gädda">Gädda</option>
+                </select>
+                <input type="number" id="length" placeholder="Längd i cm" required aria-label="Längd i cm">
+                <button type="submit">Registrera</button>
+            </form>
+        </div>
+
+        <div class="progress-container">
+            <h2>Framsteg</h2>
+            <div class="progress-box">
+                <h3>Markus</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressMarkus"></div>
+                </div>
+                <span id="progressTextMarkus">0 / 1500 cm</span>
+            </div>
+            <div class="progress-box">
+                <h3>Max</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressMax"></div>
+                </div>
+                <span id="progressTextMax">0 / 1500 cm</span>
+            </div>
+            <div class="progress-box">
+                <h3>Lasse</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressLasse"></div>
+                </div>
+                <span id="progressTextLasse">0 / 1500 cm</span>
+            </div>
+        </div>
+
+        <div class="top3-container">
+            <div class="top3-box">
+                <h2>Top 3 Största Abborre</h2>
+                <ul id="top3Abborre" class="top3-list"></ul>
+            </div>
+            <div class="top3-box">
+                <h2>Top 3 Största Gädda</h2>
+                <ul id="top3Gadda" class="top3-list"></ul>
+            </div>
+        </div>
+
+        <div class="history-container">
+            <h2>Historik</h2>
+            <div id="catchHistory"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        if (!isLoggedIn) {
+            // Redirect to login page if not logged in
+            window.location.href = 'login.html';
+        } else {
+            // Show the main content if logged in
+            document.querySelector('.main-container').style.display = 'block';
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Fisketävling. Alla rättigheter förbehållna.</p>
+    </footer>
+</body>
+</html>
+<button id="logoutButton">Logga ut</button>
+
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'login.html';
+    });
+</script>
