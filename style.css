@@ -1,169 +1,196 @@
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Allmänna stilar för body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f5f7fa;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Använd Roboto som typsnitt */
+    margin: 0; /* Ingen marginal runt body */
+    padding: 20px; /* Inre marginal */
+    background-color: #e9f5f0; /* Ljus bakgrundsfärg */
+    color: #333; /* Mörk textfärg */
 }
 
-
+/* Stilar för header */
 header {
-    background: linear-gradient(135deg, #4682b4, #20517d);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    background: linear-gradient(135deg, #4caf50, #388e3c); /* Grön gradient för bakgrunden */
+    color: white; /* Vit textfärg */
+    padding: 20px; /* Inre marginal */
+    text-align: center; /* Centrera texten */
+    border-radius: 10px; /* Rundade hörn */
+    margin-bottom: 20px; /* Marginal under header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skugga för djup */
 }
 
+/* Stilar för huvudbehållaren */
 .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Maximal bredd för huvudbehållaren */
+    margin: 0 auto; /* Centrera behållaren */
 }
 
-/* Form styling */
+/* Stilar för formulärbehållaren */
 .form-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    background: #ffffff; /* Vit bakgrund */
+    padding: 20px; /* Inre marginal */
+    border-radius: 10px; /* Rundade hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Skugga för djup */
+    margin-bottom: 20px; /* Marginal under formulärbehållaren */
 }
 
+/* Stilar för formulär */
 form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox för att arrangera element */
+    gap: 10px; /* Avstånd mellan element */
+    flex-wrap: wrap; /* Tillåt radbrytning */
 }
 
+/* Stilar för select, input och button */
 select, input, button {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 10px; /* Inre marginal */
+    border: 1px solid #ddd; /* Ljus grå kant */
+    border-radius: 5px; /* Rundade hörn */
+    font-size: 16px; /* Typsnittsstorlek */
 }
 
+/* Stilar för knappar */
 button {
-    background-color: #4682b4;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #388e3c; /* Grön bakgrundsfärg */
+    color: white; /* Vit textfärg */
+    border: none; /* Ingen kant */
+    cursor: pointer; /* Handpekare vid hover */
+    transition: background-color 0.3s, transform 0.2s; /* Mjuk övergång för bakgrundsfärg och transform */
 }
 
+/* Hover-effekt för knappar */
 button:hover {
-    background-color: #20517d;
+    background-color: #2e7d32; /* Mörkare grön vid hover */
+    transform: scale(1.05); /* Liten förstoring vid hover */
 }
 
-/* Progress bars */
+/* Stilar för framstegsmätare */
 .progress-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    background: white; /* Vit bakgrund */
+    padding: 20px; /* Inre marginal */
+    border-radius: 10px; /* Rundade hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Skugga för djup */
+    margin-bottom: 20px; /* Marginal under framstegsmätare */
 }
 
+/* Stilar för framstegsmätarens behållare */
 .progress-box {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Marginal under varje framstegsmätare */
 }
 
+/* Stilar för framstegsmätarens container */
 .progress-bar-container {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    height: 20px;
-    overflow: hidden;
-    margin: 10px 0;
+    background-color: #f0f0f0; /* Ljusgrå bakgrund */
+    border-radius: 10px; /* Rundade hörn */
+    height: 20px; /* Höjd på mätaren */
+    overflow: hidden; /* Dölja överflödig del */
+    margin: 10px 0; /* Marginal ovan och under */
 }
 
+/* Stilar för framstegsmätaren */
 .progress-bar {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #4682b4, #20517d);
-    transition: width 0.3s ease;
+    width: 0%; /* Startbredd */
+    height: 100%; /* Full höjd av container */
+    background: linear-gradient(90deg, #4caf50, #388e3c); /* Grön gradient */
+    transition: width 0.3s ease; /* Mjuk övergång för bredd */
 }
 
-/* History section */
+/* Stilar för historiksektionen */
 .history-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: white; /* Vit bakgrund */
+    padding: 20px; /* Inre marginal */
+    border-radius: 10px; /* Rundade hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Skugga för djup */
 }
 
+/* Stilar för fångsthistorik */
 #catchHistory {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    display: grid; /* Använd grid-layout */
+    grid-template-columns: repeat(3, 1fr); /* Tre kolumner */
+    gap: 20px; /* Avstånd mellan kolumner */
 }
 
+/* Stilar för varje fångstpost */
 .catch-item {
-    background: #f5f7fa;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: #c8e6c9; /* Ljusgrön bakgrund */
+    padding: 15px; /* Inre marginal */
+    border-radius: 5px; /* Rundade hörn */
+    display: flex; /* Flexbox för arrangemang */
+    justify-content: space-between; /* Utrymme mellan element */
+    align-items: center; /* Centrera vertikalt */
 }
 
+/* Stilar för ta bort-knappen */
 .delete-btn {
-    background-color: #ff4444;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #ff5722; /* Orange bakgrund */
+    color: white; /* Vit textfärg */
+    border: none; /* Ingen kant */
+    padding: 5px 10px; /* Inre marginal */
+    border-radius: 5px; /* Rundade hörn */
+    cursor: pointer; /* Handpekare vid hover */
+    transition: background-color 0.3s; /* Mjuk övergång för bakgrundsfärg */
 }
 
+/* Hover-effekt för ta bort-knappen */
 .delete-btn:hover {
-    background-color: #cc0000;
+    background-color: #cc0000; /* Mörkare röd vid hover */
 }
 
+/* Stilar för rubriker */
 h2 {
-    margin-top: 0;
-    color: #4682b4;
-    border-bottom: 2px solid #4682b4;
-    padding-bottom: 10px;
+    margin-top: 0; /* Ingen övre marginal */
+    color: #333; /* Mörk textfärg */
+    border-bottom: 2px solid #388e3c; /* Grön understrykning */
+    padding-bottom: 10px; /* Inre marginal under rubriken */
 }
 
 h3 {
-    margin: 0;
-    color: #333;
+    margin: 0; /* Ingen marginal */
+    color: #333; /* Mörk textfärg */
+    border-bottom: 2px solid #f0f0f0; /* Ljusgrå understrykning */
 }
 
+/* Stilar för topplistor */
 .top3-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+    display: flex; /* Flexbox för arrangemang */
+    gap: 20px; /* Avstånd mellan topplistor */
+    margin-bottom: 20px; /* Marginal under topplistor */
 }
 
+/* Stilar för varje topplista */
 .top3-box {
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1; /* Låt varje box ta lika mycket plats */
+    background: white; /* Vit bakgrund */
+    padding: 20px; /* Inre marginal */
+    border-radius: 10px; /* Rundade hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Skugga för djup */
 }
 
+/* Stilar för topplistor */
 .top3-list {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Ingen punktlista */
+    padding: 0; /* Ingen inre marginal */
 }
 
+/* Stilar för varje listobjekt i topplistor */
 .top3-list li {
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+    padding: 10px; /* Inre marginal */
+    margin: 5px 0; /* Marginal ovan och under */
+    border-radius: 5px; /* Rundade hörn */
+    border-bottom: none; /* Ingen kant under */
 }
 
+/* Specifika färger för topplistor */
 .top3-list li:nth-child(1) {
-    background-color: #ffd700;
+    background-color: #4caf50; /* Grön för första plats */
 }
 
 .top3-list li:nth-child(2) {
-    background-color: #c0c0c0;
+    background-color: #8bc34a; /* Ljusgrön för andra plats */
 }
 
 .top3-list li:nth-child(3) {
-    background-color: #cd7f32;
+    background-color: #cddc39; /* Gulgrön för tredje plats */
 }
