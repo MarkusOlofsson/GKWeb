@@ -19,15 +19,27 @@ document.getElementById('catchForm').addEventListener('submit', function(e) {
 
 function updateProgressBars() {
     const fishermen = ['Markus', 'Max', 'Lasse'];
-    
+    let firstTo1000Abborre = null;
+
     fishermen.forEach(fisherman => {
-        const totalLength = catches
-            .filter(c => c.fisherman === fisherman)
+        const totalLengthAbborre = catches
+            .filter(c => c.fisherman === fisherman && c.fish === 'Abborre')
             .reduce((sum, fishingRecord) => sum + fishingRecord.length, 0);
         
-        const progress = (totalLength / 1500) * 100;
-        document.getElementById(`progress${fisherman}`).style.width = `${Math.min(progress, 100)}%`;
-        document.getElementById(`progressText${fisherman}`).textContent = `${totalLength} / 1500 cm`;
+        const totalLengthGadda = catches
+            .filter(c => c.fisherman === fisherman && c.fish === 'Gädda')
+            .reduce((sum, fishingRecord) => sum + fishingRecord.length, 0);
+        
+        const progressAbborre = (totalLengthAbborre / 1000) * 100;
+        const progressGadda = (totalLengthGadda / 1500) * 100;
+
+        document.getElementById(`progress${fisherman}Abborre`).style.width = `${Math.min(progressAbborre, 100)}%`;
+        document.getElementById(`progressText${fisherman}Abborre`).textContent = `${totalLengthAbborre} / 1000 cm Abborre`;
+
+        document.getElementById(`progress${fisherman}Gadda`).style.width = `${Math.min(progressGadda, 100)}%`;
+        document.getElementById(`progressText${fisherman}Gadda`).textContent = `${totalLengthGadda} / 1500 cm Gädda`;
+
+        
     });
 }
 
@@ -74,7 +86,7 @@ function updateHistory() {
                 li.className = 'catch-item';
                 li.innerHTML = `
                     ${fishingRecord.fish} - ${fishingRecord.length}cm (${fishingRecord.date})
-                    <button class="delete-btn" onclick="deleteCatch(${index})">Ta bort</button>
+                    <button class="delete-btn" onclick="deleteCatch(${catches.indexOf(fishingRecord)})">Ta bort</button>
                 `;
                 ul.appendChild(li);
             });

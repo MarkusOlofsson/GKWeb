@@ -78,23 +78,35 @@ button:hover {
 /* Stilar för framstegsmätarens behållare */
 .progress-box {
     margin-bottom: 20px; /* Marginal under varje framstegsmätare */
+    padding: 10px; /* Inre marginal för att ge utrymme runt mätarna */
+    border: 1px solid #ffffff; /* Ljus grå kant */
+    border-radius: 10px; /* Rundade hörn */
+    background-color: #f9f9f9; /* Ljus bakgrund för att skilja den från resten */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lätt skugga för djup */
 }
 
 /* Stilar för framstegsmätarens container */
 .progress-bar-container {
-    background-color: #f0f0f0; /* Ljusgrå bakgrund */
+    background-color: #ffffff; /* Ljusgrå bakgrund */
     border-radius: 10px; /* Rundade hörn */
-    height: 20px; /* Höjd på mätaren */
-    overflow: hidden; /* Dölja överflödig del */
+    height: auto; /* Låt höjden anpassas efter innehållet */
     margin: 10px 0; /* Marginal ovan och under */
+    display: flex; /* Använd flexbox */
+    flex-direction: column; /* Stapla mätarna vertikalt */
+    padding: 5px; /* Inre marginal för att ge utrymme runt mätarna */
+    border: 1px solid #eeeeee; /* Ljus grå kant */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lätt skugga för djup */
+    width: auto;
 }
 
 /* Stilar för framstegsmätaren */
 .progress-bar {
-    width: 0%; /* Startbredd */
-    height: 100%; /* Full höjd av container */
-    background: linear-gradient(90deg, #4caf50, #388e3c); /* Grön gradient */
+    width: 100%; /* Full bredd av container */
+    height: 20px; /* Höjd på mätaren */
+    background: linear-gradient(90deg, #4caf50, #003903); /* Grön gradient */
     transition: width 0.3s ease; /* Mjuk övergång för bredd */
+    margin-bottom: 5px; /* Avstånd mellan mätarna */
+    border-radius: 10px; /* Rundade hörn */
 }
 
 /* Stilar för historiksektionen */
@@ -194,3 +206,17 @@ h3 {
 .top3-list li:nth-child(3) {
     background-color: #cddc39; /* Gulgrön för tredje plats */
 }
+
+/* Stilar för texten under framstegsmätarna */
+#progressTextMarkusAbborre,
+#progressTextMarkusGadda,
+#progressTextMaxAbborre,
+#progressTextMaxGadda,
+#progressTextLasseAbborre,
+#progressTextLasseGadda {
+    margin-top: 5px; /* Marginal ovanför texten */
+    font-size: 16px; /* Typsnittsstorlek */
+    color: #333; /* Mörk textfärg */
+    font-weight: bold; /* Fet stil för att göra texten mer framträdande */
+}
+
